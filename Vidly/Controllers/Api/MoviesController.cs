@@ -53,7 +53,7 @@ namespace Vidly.Controllers.Api
         //POST /api/movies
         [HttpPost]
         [Authorize(Roles = RoleName.CanManageMovies)]
-        public IHttpActionResult CreateCustomer(MovieDto movieDto)
+        public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
