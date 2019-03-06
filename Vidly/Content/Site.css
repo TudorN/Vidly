@@ -24,10 +24,31 @@ textarea {
 }
 
 
-.field-validation-error {
+.field-validation-error, 
+label.error {
     color:red;
 }
-.input-validation-error {
-
-    border:2px solid red;
+.input-validation-error, 
+input.error {
+    border: 2px solid red;
 }
+.validation-summary-errors {
+
+    color:red;
+}
+
+/* Overriding navbar colors*/
+.navbar-inverse {
+    background-color: #14479c !important;
+    border-color: #85ff9e !important;
+    color: #fff !important;
+    background-image:none !important;
+}
+ 
+/*.navbar-inverse .navbar-nav > li > a {
+    color: #fff !important;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #999 !important;
+}*/

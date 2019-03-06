@@ -1,4 +1,4 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top">
+﻿<div class="navbar navbar-inverse navbar-fixed-top navbarcolor">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -6,12 +6,44 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @*@Html.ActionLink("CoolRentals", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            @if (ViewBag.Title == "Home Page")
+            {
+                <a href="/" class="navbar-brand " style="color:white !important">CoolRentals</a>
+            }
+            else
+            {
+                <a href="/" class="navbar-brand">CoolRentals</a>
+            }
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
-                <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+                @if (ViewBag.Title == "New Rental Form")
+                {
+                    <li><a href="/rentals/new" class="navbar-brand " style="color:white !important">NewRental</a></li>
+                }
+                else
+                {
+                    <a href="/rentals/new" class="navbar-brand">NewRental</a>
+                }
+
+                @if (ViewBag.Title == "Customers")
+                {
+                    <li><a href="/customers" class="navbar-brand " style="color:white !important">Customers</a></li>
+                }
+                else
+                {
+                    <a href="/customers" class="navbar-brand">Customers</a>
+                }
+
+                @if (ViewBag.Title == "Movies")
+                {
+                    <li><a href="/movies" class="navbar-brand " style="color:white !important">Movies</a></li>
+                }
+                else
+                {
+                    <a href="/movies" class="navbar-brand">Movies</a>
+                }
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
